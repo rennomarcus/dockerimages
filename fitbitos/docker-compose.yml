@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  fitbitos:
+    environment:
+      - DISPLAY=$DISPLAY
+      - WINEARCH=win32
+    volumes: 
+      - '/tmp/.X11-unix/:/tmp/.X11-unix/'
+    image: rennomarcus/fitbitos
+    stdin_open: true
+    tty: true
+    network_mode: "host"
+    devices:
+        - "/dev/snd:/dev/snd"
